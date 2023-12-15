@@ -8,8 +8,21 @@
  * you don't want to deal with this.
  */
 
-const { TextEncoder } = require('node:util')
+const { TextDecoder, TextEncoder } = require('node:util')
 
 Object.defineProperties(globalThis, {
-    TextEncoder: { value: TextEncoder },
+  TextDecoder: { value: TextDecoder },
+  TextEncoder: { value: TextEncoder },
+})
+
+const { Blob } = require('node:buffer')
+const { fetch, Headers, FormData, Request, Response } = require('undici')
+
+Object.defineProperties(globalThis, {
+  fetch: { value: fetch, writable: true },
+  Blob: { value: Blob },
+  Headers: { value: Headers },
+  FormData: { value: FormData },
+  Request: { value: Request },
+  Response: { value: Response },
 })

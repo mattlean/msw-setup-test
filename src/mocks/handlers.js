@@ -5,7 +5,7 @@ export const handlers = [
     // The "/pets" string is a path predicate.
     // Only the GET requests whose path matches
     // the "/pets" string will be intercepted.
-    '/pets',
+    'http://localhost:8080/pets',
     // The function below is a "resolver" function.
     // It accepts a bunch of information about the
     // intercepted request, and decides how to handle it.
